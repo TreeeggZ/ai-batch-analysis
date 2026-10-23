@@ -10,7 +10,7 @@ Python / Flask · HTML / JavaScript · LLM API集成 · SSE · JSON / Excel · P
 
 ## 界面示意
 
-**下图为AI生成的横版界面示意，非实际运行截图。**用于说明上传、配置与结果处理的布局，图中的版本号、数据和日志均为示例。
+**下图为AI生成的横版界面示意，非实际运行截图。** 用于说明上传、配置与结果处理的布局，图中的版本号、数据和日志均为示例。
 
 ![AI生成的用户反馈处理工作台界面示意，非实际运行截图](assets/workbench-concept-ai.png)
 
@@ -34,12 +34,9 @@ Python / Flask · HTML / JavaScript · LLM API集成 · SSE · JSON / Excel · P
 
 ## 技术流程
 
-```mermaid
-flowchart LR
-  A[导入表格并配置任务] --> B[Python分批调用模型]
-  B --> C[聚合响应并解析JSON]
-  C --> D[Excel回填与结果导出]
-```
+![AI批量文本分析流程](assets/analysis-flow.svg)
+
+[查看流程源文件](docs/analysis-flow.mmd)
 
 响应通过SSE接收；处理过程中加入有限重试、错误标记与结果备份，导出时打包为ZIP。
 
